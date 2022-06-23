@@ -1,0 +1,76 @@
+<!--This is the search page of the project-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="back overlay">
+  <br>
+  <header>
+    <div class="nav flex-start">
+        <ul>
+            <li><i class="fa fa-twitter"  style="font-size:30px; color: rgb(27, 196, 238);"></i></li>
+            <li><i class="fa fa-home"  style="font-size:30px;" ></i></li>
+            <!-- <li><i class="fa fa-hashtag"  style="font-size:30px;" ></i></li> -->
+            <!-- <li><i class="fa fa-user"  style="font-size:30px;" ></i></li> -->
+            <!-- <li><i class="fa fa-retweet"  style="font-size:30px;" ></i></li> -->
+            <!-- <li><a href="#">Home</a></li> -->
+        </ul>
+    </div>
+    <div class="nav flex-end">
+        <ul>
+            <li></li>
+            <li><i class="fa fa-profile"  style="font-size:30px;" ></i></li>
+            <!-- <li><a href="#"><div id="waffle"></div></a></li> -->
+            <!-- <li><a href="#" id="signin">Sign In</a></li> -->
+        </ul>
+        
+    </div>
+  </header>
+  <br> <br><br> <br>
+ <div class="logo-design">   <i class="fa fa-twitter" style="font-size:54px" > Tweepy engine</i> 
+</div>
+
+
+ <input class=" round box-class"  #searchBox id="search-box" 
+         (keyup.enter)="search(searchBox.value)" />
+ <button class="luce-box"  (click)="search(searchBox.value)">Lucene Search</button> 
+ <button class="hadoop-box"  (click)="search(searchBox.value)">Hadoop Search</button>
+
+  <!-- <h5>Search Results:</h5> -->
+  <ul class="tweets" *ngIf="tweets">
+    <br>  <br> <br> <br>
+    <hr class="new1">
+    <div class="w3-container" *ngFor="let tweet of tweets">
+      <div class="w3-card-4" style="width:99%;background-color: azure;">
+        <div class="w3-container w3-animate-top w3-text-blue " >
+         <div style="font: weight 100px;"> <h6 style="float:left "> <i class="fa fa-user"  style="font-size:20px;" ></i> {{tweet.user_name}}</h6>
+          <h6 style="float:left">  @{{tweet.user_id}} </h6>
+          <h6 style="float:left;color:rgb(9, 17, 19);"> <i class="fa fa-location-arrow"  style="font: size 20px; color:rgb(9, 17, 19); ;" ></i>{{tweet.user_location}}   </h6>
+          <!-- <h6 style="float:right">  Followers:{{tweet.user_friends}} </h6>
+          <h6 style="float:right">{{tweet.tweet_likes}} <i class="fa fa-thumbs-o-up"  style="font-size:20px;" ></i>  </h6> -->
+          <!-- <br>
+          <h6 style="float:left"><i class="fa fa-link"  style="font-size:20px;" ></i>: {{tweet.tweet_url}}  </h6> -->
+            <h6 style="float:right">Followers:{{tweet.user_friends}} </h6>
+            <h6 style="float:right">{{tweet.tweet_likes}} <i class="fa fa-thumbs-o-up"  style="font-size:20px;" >, </i>  </h6>
+            <br>
+            <br>
+            <h6 style="color:rgb(9, 17, 19); font-size: small;float:left"><i class="fa fa-hashtag" ></i>Tweet :{{tweet.tweet_content}}</h6>
+        </div>
+        </div>
+
+        <!-- <div class="w3-container w3-animate-top">
+          <p><i class="fa fa-hashtag" ></i>Tweet :{{tweet.tweet_content}}</p>
+        </div> -->
+        <!-- <footer class="w3-container w3-pale-blue">
+          <div>
+            <h6 style="float:right">Friends : {{tweet.user_friends}}</h6>
+            <h6 style="float:left">Followers : {{tweet.user_friends}}</h6>
+          </div>
+        </footer> -->
+      </div>
+      <br />
+    </div>
+  </ul>
+
+</div>
+
+<router-outlet></router-outlet>
