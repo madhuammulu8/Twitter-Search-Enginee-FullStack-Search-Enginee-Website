@@ -1,4 +1,3 @@
-Youtube Link: https://www.youtube.com/watch?v=nEqtQ0FIVT8
 
 # Total Architecture : 
 
